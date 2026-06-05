@@ -1,5 +1,7 @@
 # Contributor Covenant Code of Conduct
 
+## contact email: aanand41@myseneca.ca
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our
