@@ -34,7 +34,7 @@ settings:
 
 ---
 
-## 3. `git log --oneline --graph`
+## 3. 'The output of git log --oneline --graph'
 
 ```
 *   2b0ad69 (HEAD -> develop, origin/develop, origin/HEAD) Merge pull request #4 from arushi-78/feature/add-dockerignore
@@ -80,25 +80,22 @@ not auto-merge them and surfaced a conflict.
 The first challenge was conceptual. I had to realise that a conflict only occurs
 when changes overlap on the same (or immediately adjacent) lines. My first
 instinct was to place the two edits in genuinely "different locations" as the
-brief literally says — but doing that would have let Git merge them automatically
-with nothing to resolve. To produce a real conflict I had to deliberately make
+brief literally says, but doing that would have let Git merge them automatically
+with nothing to resolve. To produce a real conflict, I had to deliberately make
 both edits land in the same section of the file.
 
 The second challenge was reading the conflict markers correctly. Seeing
-`<<<<<<<`, `=======`, and `>>>>>>>` for the first time is disorienting — it is
-easy to delete the wrong block or leave a stray marker behind, which silently
-breaks the file. I learned to treat the section between `<<<<<<<` and `=======`
-as my branch's version and the section between `=======` and `>>>>>>>` as the
-incoming version.
+`<<<<<<<`, `=======`, and `>>>>>>>` for the first time was disorienting, and it 
+would have been easy to delete the wrong block or leave a stray marker that 
+silently breaks the file.
 
 The third challenge was deciding on the resolution. The requirement was to
 preserve both changes, so "accept current" or "accept incoming" on their own were
-both wrong — I needed to keep both lines and remove all three marker lines. I
+both wrong. I needed to keep both lines and remove all three marker lines. I
 resolved it in VS Code using **Accept Both Changes**, then verified that the file
 contained both the author line and the course line, with no leftover markers,
 before committing the merge.
 
-The main takeaway is that a merge conflict is not an error but a prompt for a
-human decision. Git is asking which intent should win, and when both edits are
-valid, the right answer is to combine them thoughtfully rather than discard
-either one.
+My takeaway is that a merge conflict isn't an error but a prompt for a human 
+decision about which intent should win, and when both are valid, the right move 
+is to combine them.
